@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #64748b;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+}
+
+.container {
+    width: 500px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #f8fafc;
+    box-shadow: 5px 5px 15px 5px #0000001f;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 5px 15px;
+    border: 0;
+    border-radius: 5px;
+    background: #7dd3fc;
+    cursor: pointer;
+    margin: 0 3px;
+    transition: all 0.3s ease;
+}
+
+.editer {
+    background: #a3e635;
+}
+
+.editer:hover {
+    background: #84cc16;
+}
+
+.supprimer {
+    background: #fda4af;
+}
+
+.supprimer:hover {
+    background: #f43f5e;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+input {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
+    width: 100%;
+    outline: none;
+    box-shadow: #ddd 0px 0px 5px 0px inset;
+}
+
+form input {
+    flex: 1;
+    margin-right: 15px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+li p {
+    flex: 1;
+}
+
+li .todo {
+    flex: 0 0 20px;
+    height: 20px;
+    border-radius: 30px;
+    margin-right: 15px;
+    border: 2px solid #333;
+}
+
+li .todo.done {
+    background: #333;
+}
