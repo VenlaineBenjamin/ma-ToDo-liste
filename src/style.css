@@ -40,6 +40,7 @@ button {
     background: #7dd3fc;
     cursor: pointer;
     margin: 0 3px;
+    outline: 0;
     transition: all 0.3s ease;
 }
 
