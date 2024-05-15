@@ -96,6 +96,8 @@ li p {
 
 li p.done {
     text-decoration: line-through;
+    color: #64748b;
+    text-decoration-color: #64748b;
 }
 
 li .todo {
