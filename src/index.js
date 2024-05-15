@@ -39,10 +39,10 @@ const displayTodo = () => {
 const createTodoElement = (todo, index) => {
     const li = document.createElement("li");
     const buttonDelete = document.createElement("button");
-    buttonDelete.innerHTML = "Supprimer";
+    buttonDelete.innerHTML = "✖";
     buttonDelete.classList.add("supprimer");
     const buttonEdit = document.createElement("button");
-    buttonEdit.innerHTML = "Edit";
+    buttonEdit.innerHTML = "✎";
     buttonEdit.classList.add("editer");
     buttonDelete.addEventListener("click", (event) => {
         event.stopPropagation();
@@ -58,6 +58,20 @@ const createTodoElement = (todo, index) => {
     li.addEventListener("click", (event) => {
         toggleTodo(index);
     });
+    li.addEventListener("dblclick", (event) => {
+        toggleEditMode(index);
+    });
+    let timer;
+    li.addEventListener("click", (event) => {
+        if (event.detail === 1) {
+            timer = setTimeout(() => {
+                toggleTodo(index);
+            }, 200);
+        } else if (event.detail > 1) {
+            clearTimeout(timer);
+            toggleEditMode(index);
+        }
+    });
     li.append(buttonEdit, buttonDelete);
     return li;
 };
@@ -67,10 +81,17 @@ const createTodoEditElement = (todo, index) => {
     const input = document.createElement("input");
     input.type = "text";
     input.value = todo.text;
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            editTodo(index, input);
+        }
+    });
     const buttonSave = document.createElement("button");
-    buttonSave.innerHTML = "Save";
+    buttonSave.innerHTML = "✔";
+    buttonSave.classList.add("editer");
     const buttonCancel = document.createElement("button");
-    buttonCancel.innerHTML = "Cancel";
+    buttonCancel.innerHTML = "✖";
+    buttonCancel.classList.add("supprimer");
     buttonCancel.addEventListener("click", (event) => {
         event.stopPropagation();
         toggleEditMode(index);
