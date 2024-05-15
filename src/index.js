@@ -12,16 +12,16 @@ form.addEventListener("submit", (event) => {
 });
 
 const todos = [
-    {
-        text: "je suis une todo",
-        done: false,
-        editMode: false,
-    },
-    {
-        text: "faire du JavaScript",
-        done: true,
-        editMode: false,
-    },
+    // {
+    //     text: "je suis une todo",
+    //     done: false,
+    //     editMode: false,
+    // },
+    // {
+    //     text: "faire du JavaScript",
+    //     done: true,
+    //     editMode: false,
+    // },
 ];
 
 const displayTodo = () => {
@@ -81,9 +81,10 @@ const createTodoEditElement = (todo, index) => {
 };
 
 const addTodo = (text) => {
+    text = text.trim();
     if (text) {
         todos.push({
-            text,
+            text: `${text[0].toUpperCase()}${text.slice(1)}`,
             done: false,
         });
         displayTodo();
