@@ -40,8 +40,10 @@ const createTodoElement = (todo, index) => {
     const li = document.createElement("li");
     const buttonDelete = document.createElement("button");
     buttonDelete.innerHTML = "Supprimer";
+    buttonDelete.classList.add("supprimer");
     const buttonEdit = document.createElement("button");
     buttonEdit.innerHTML = "Edit";
+    buttonEdit.classList.add("editer");
     buttonDelete.addEventListener("click", (event) => {
         event.stopPropagation();
         deleteTodo(index);

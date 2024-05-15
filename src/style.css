@@ -44,19 +44,19 @@ button {
     transition: all 0.3s ease;
 }
 
-.editer {
+button.editer {
     background: #a3e635;
 }
 
-.editer:hover {
+button.editer:hover {
     background: #84cc16;
 }
 
-.supprimer {
+button.supprimer {
     background: #fda4af;
 }
 
-.supprimer:hover {
+button.supprimer:hover {
     background: #f43f5e;
 }
 
@@ -89,6 +89,13 @@ li {
     align-items: center;
     padding: 10px 0;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+li:hover {
+    background: #7dd3fc;
+    border-radius: 5px;
+    padding: 10px 0 10px 5px;
 }
 
 li p {
