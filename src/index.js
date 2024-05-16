@@ -58,20 +58,6 @@ const createTodoElement = (todo, index) => {
     li.addEventListener("click", (event) => {
         toggleTodo(index);
     });
-    li.addEventListener("dblclick", (event) => {
-        toggleEditMode(index);
-    });
-    let timer;
-    li.addEventListener("click", (event) => {
-        if (event.detail === 1) {
-            timer = setTimeout(() => {
-                toggleTodo(index);
-            }, 200);
-        } else if (event.detail > 1) {
-            clearTimeout(timer);
-            toggleEditMode(index);
-        }
-    });
     li.append(buttonEdit, buttonDelete);
     return li;
 };
